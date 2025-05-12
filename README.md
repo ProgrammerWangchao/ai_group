@@ -157,6 +157,10 @@
    - 后端API: http://localhost:8000/api
 
 ### 生产环境部署
+# 1. 克隆项目
+git clone https://github.com/ProgrammerWangchao/ai_group.git
+cd ai_group
+
 1. 配置生产环境变量
    - 后端: 设置 `DJANGO_DEBUG=False` 并提供有效的 `DJANGO_SECRET_KEY`
    - 前端: 配置 `.env.production` 文件
