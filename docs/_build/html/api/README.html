@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="py-4">
+            <h1>AI工具平台文档</h1>
+            <nav class="my-4">
+                <a href="/" class="btn btn-outline-primary me-2">首页</a>
+                <a href="/api" class="btn btn-outline-secondary me-2">API文档</a>
+                <a href="/components" class="btn btn-outline-success me-2">组件文档</a>
+            </nav>
+        </header>
+        
+        <main>
+            <h1 id="api接口文档总览">API接口文档总览</h1>
+            <h2 id="认证方式">认证方式</h2>
+            <p>所有API使用JWT认证，需要在请求头中添加：</p>
+            <pre class="http"><code>Authorization: Bearer &lt;your_token&gt;</code></pre>
+            <h2 id="公共响应格式">公共响应格式</h2>
+            <h3 id="成功响应">成功响应</h3>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode json"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;code&quot;</span><span class="fu">:</span> <span class="dv">200</span><span class="fu">,</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;data&quot;</span><span class="fu">:</span> <span class="fu">{},</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;message&quot;</span><span class="fu">:</span> <span class="st">&quot;success&quot;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+            <h3 id="错误响应">错误响应</h3>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode json"><code class="sourceCode json"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;code&quot;</span><span class="fu">:</span> <span class="dv">400</span><span class="fu">,</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;error&quot;</span><span class="fu">:</span> <span class="st">&quot;Invalid request&quot;</span><span class="fu">,</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;message&quot;</span><span class="fu">:</span> <span class="st">&quot;请求参数错误&quot;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+            <h2 id="接口列表">接口列表</h2>
+            <h3 id="用户管理">用户管理</h3>
+            <ul>
+            <li><a
+            href="/api/User_Management.md#用户列表">用户列表</a></li>
+            <li><a
+            href="/api/User_Management.md#用户详情">用户详情</a></li>
+            <li><a
+            href="/api/User_Management.md#创建用户">创建用户</a></li>
+            <li><a
+            href="/api/User_Management.md#更新用户">更新用户</a></li>
+            <li><a
+            href="/api/User_Management.md#删除用户">删除用户</a></li>
+            </ul>
+            <h3 id="工具管理">工具管理</h3>
+            <ul>
+            <li><a
+            href="/api/Tool_Management.md#工具列表">工具列表</a></li>
+            <li><a
+            href="/api/Tool_Management.md#工具详情">工具详情</a></li>
+            <li><a
+            href="/api/Tool_Management.md#创建工具">创建工具</a></li>
+            <li><a
+            href="/api/Tool_Management.md#更新工具">更新工具</a></li>
+            <li><a
+            href="/api/Tool_Management.md#删除工具">删除工具</a></li>
+            </ul>
+            <h3 id="分类管理">分类管理</h3>
+            <ul>
+            <li><a
+            href="/api/Category_Management.md#分类列表">分类列表</a></li>
+            <li><a
+            href="/api/Category_Management.md#分类详情">分类详情</a></li>
+            <li><a
+            href="/api/Category_Management.md#创建分类">创建分类</a></li>
+            <li><a
+            href="/api/Category_Management.md#更新分类">更新分类</a></li>
+            <li><a
+            href="/api/Category_Management.md#删除分类">删除分类</a></li>
+            </ul>
+            <p><a
+            href="../api/User_Management.md">查看完整API文档</a></p>
+        </main>
+        
+        <footer class="py-4 mt-4 border-top">
+            <p>© 2023 AI工具平台 - 所有权利保留</p>
+        </footer>
+    </div>
+</body>
+</html>

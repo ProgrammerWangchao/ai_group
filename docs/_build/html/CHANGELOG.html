@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="py-4">
+            <h1>AI工具平台文档</h1>
+            <nav class="my-4">
+                <a href="/" class="btn btn-outline-primary me-2">首页</a>
+                <a href="/api" class="btn btn-outline-secondary me-2">API文档</a>
+                <a href="/components" class="btn btn-outline-success me-2">组件文档</a>
+            </nav>
+        </header>
+        
+        <main>
+            <h1 id="更新日志">更新日志</h1>
+            <p>遵循<a
+            href="https://semver.org/lang/zh-CN/">语义化版本</a>规范</p>
+            <h2 id="section">[1.0.0] - 2023-06-20</h2>
+            <h3 id="新增">新增</h3>
+            <ul>
+            <li>用户管理系统
+            <ul>
+            <li>用户注册/登录/验证</li>
+            <li>管理员用户管理界面</li>
+            </ul></li>
+            <li>工具管理基础功能
+            <ul>
+            <li>工具创建/编辑/删除</li>
+            <li>工具分类管理</li>
+            </ul></li>
+            </ul>
+            <h3 id="变更">变更</h3>
+            <ul>
+            <li>升级前端框架到React 18</li>
+            <li>重构API认证系统为JWT</li>
+            </ul>
+            <h3 id="修复">修复</h3>
+            <ul>
+            <li>修复用户权限验证漏洞</li>
+            <li>修复分页查询性能问题</li>
+            </ul>
+            <h2 id="section-1">[0.9.0] - 2023-05-15</h2>
+            <h3 id="新增-1">新增</h3>
+            <ul>
+            <li>初始化项目结构</li>
+            <li>搭建基础CI/CD流程</li>
+            <li>实现核心API框架</li>
+            </ul>
+            <h2 id="版本格式说明">版本格式说明</h2>
+            <pre><code>[版本号] - 发布日期
+### 新增
+- 新功能描述
+
+### 变更
+- 现有功能修改
+
+### 修复
+- 问题修复列表
+
+### 废弃
+- 即将移除的功能</code></pre>
+        </main>
+        
+        <footer class="py-4 mt-4 border-top">
+            <p>© 2023 AI工具平台 - 所有权利保留</p>
+        </footer>
+    </div>
+</body>
+</html>

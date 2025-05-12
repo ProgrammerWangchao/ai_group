@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="py-4">
+            <h1>AI工具平台文档</h1>
+            <nav class="my-4">
+                <a href="/" class="btn btn-outline-primary me-2">首页</a>
+                <a href="/api" class="btn btn-outline-secondary me-2">API文档</a>
+                <a href="/components" class="btn btn-outline-success me-2">组件文档</a>
+            </nav>
+        </header>
+        
+        <main>
+            <h1 id="贡献指南">贡献指南</h1>
+            <h2 id="协作流程">协作流程</h2>
+            <pre class="mermaid"><code>graph TB
+    A[Fork项目] --&gt; B[创建分支]
+    B --&gt; C[开发功能]
+    C --&gt; D[提交PR]
+    D --&gt; E[代码审查]
+    E --&gt; F[合并到主分支]</code></pre>
+            <h2 id="开发规范">开发规范</h2>
+            <h3 id="分支命名">1. 分支命名</h3>
+            <table>
+            <thead>
+            <tr>
+            <th>类型</th>
+            <th>格式</th>
+            <th>示例</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>功能开发</td>
+            <td><code>feature/简短描述</code></td>
+            <td><code>feature/user-auth</code></td>
+            </tr>
+            <tr>
+            <td>Bug修复</td>
+            <td><code>fix/问题描述</code></td>
+            <td><code>fix/login-error</code></td>
+            </tr>
+            <tr>
+            <td>文档更新</td>
+            <td><code>docs/修改内容</code></td>
+            <td><code>docs/api-update</code></td>
+            </tr>
+            </tbody>
+            </table>
+            <h3 id="提交信息规范">2. 提交信息规范</h3>
+            <p>采用<a
+            href="https://www.conventionalcommits.org/">Conventional
+            Commits</a>格式：</p>
+            <pre><code>类型(范围): 描述
+
+详细说明(可选)
+
+BREAKING CHANGE: 重大变更说明(可选)</code></pre>
+            <p><strong>常用类型</strong>: - <code>feat</code>: 新功能 -
+            <code>fix</code>: Bug修复 - <code>docs</code>: 文档变更 -
+            <code>style</code>: 代码格式 - <code>refactor</code>:
+            重构代码 - <code>test</code>: 测试相关 - <code>chore</code>:
+            构建/工具变更</p>
+            <h2 id="代码风格">代码风格</h2>
+            <h3 id="python">Python</h3>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 遵循PEP8规范</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_total(items):</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;计算总数并返回结果&quot;&quot;&quot;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>(item.price <span class="op">*</span> item.quantity </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>              <span class="cf">for</span> item <span class="kw">in</span> items)</span></code></pre></div>
+            <h3 id="javascriptreact">JavaScript/React</h3>
+            <div class="sourceCode" id="cb4"><pre
+            class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">// 使用ES6+语法</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> fetchUser <span class="op">=</span> <span class="kw">async</span> (userId) <span class="kw">=&gt;</span> {</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> response <span class="op">=</span> <span class="cf">await</span> api<span class="op">.</span><span class="fu">get</span>(<span class="vs">`/users/</span><span class="sc">${</span>userId<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> response<span class="op">.</span><span class="at">data</span><span class="op">;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span></code></pre></div>
+            <h2 id="pull-request要求">Pull Request要求</h2>
+            <ol type="1">
+            <li><p><strong>一个PR对应一个功能/修复</strong></p></li>
+            <li><p><strong>必须包含</strong>:</p>
+            <ul>
+            <li>问题描述</li>
+            <li>解决方案</li>
+            <li>测试用例</li>
+            <li>文档更新</li>
+            </ul></li>
+            <li><p><strong>通过所有CI检查</strong>:</p>
+            <div class="sourceCode" id="cb5"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> pytest <span class="er">(</span><span class="ex">覆盖率≥80%</span><span class="kw">)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> npm run lint</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> npm run build</span></code></pre></div></li>
+            </ol>
+            <h2 id="开发环境">开发环境</h2>
+            <ol type="1">
+            <li><p><strong>预提交检查</strong>:</p>
+            <div class="sourceCode" id="cb6"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 安装pre-commit</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pre-commit</span> install</span></code></pre></div></li>
+            <li><p><strong>代码格式化</strong>:</p>
+            <div class="sourceCode" id="cb7"><pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Python</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">black</span> .</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># JavaScript</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run format</span></code></pre></div></li>
+            </ol>
+            <h2 id="问题报告">问题报告</h2>
+            <p>提交Issue时请包含： 1. 环境信息 2. 重现步骤 3. 预期行为
+            4. 实际行为 5. 相关日志/截图</p>
+            <p><strong>示例</strong>:</p>
+            <pre><code>## 环境
+- OS: Ubuntu 20.04
+- Python: 3.9.7
+- Node: 16.14.0
+
+## 问题描述
+登录接口返回500错误...
+
+## 重现步骤
+1. 访问/login
+2. 输入错误凭证
+3. 观察响应</code></pre>
+        </main>
+        
+        <footer class="py-4 mt-4 border-top">
+            <p>© 2023 AI工具平台 - 所有权利保留</p>
+        </footer>
+    </div>
+</body>
+</html>
