@@ -137,6 +137,8 @@
 
 ### 本地开发
 1. 克隆仓库
+   git clone https://github.com/ProgrammerWangchao/ai_group.git
+   cd ai_group
 2. 安装依赖
    - 前端: `cd frontend && npm install`
    - 后端: `cd backend && pip install -r requirements.txt`
