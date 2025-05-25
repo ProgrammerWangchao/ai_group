@@ -1,10 +1,18 @@
-
+# 
 from rest_framework import viewsets, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.permissions import IsAdminUser
+from rest_framework.views import APIView
 from .models import User
 from .serializers import UserAdminSerializer
+
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
+from django.views import View
+from django.http import HttpResponse
+
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
@@ -36,11 +44,10 @@ class UserViewSet(viewsets.ModelViewSet):
         user.save()
         return Response({'status': 'user unverified'}, status=status.HTTP_200_OK)
 
-
-class RegisterView(UserViewSet):
+class RegisterView(APIView):
     
     def get(self, request, *args, **kwargs):
-        pass
+        return Response("This is a GET response.", status=status.HTTP_200_OK)
 
     def post(self, request, *args, **kwargs):
-        pass
+        return Response("This is a POST response.", status=status.HTTP_200_OK)
