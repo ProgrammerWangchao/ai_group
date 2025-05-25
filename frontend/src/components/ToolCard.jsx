@@ -1,5 +1,5 @@
 
-import { Card, CardMedia, CardContent, Typography, Button, CardActions, Chip } from '@mui/material';
+import { Box, Card, CardMedia, CardContent, Typography, Button, CardActions, Chip } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 function ToolCard({ tool }) {

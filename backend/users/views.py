@@ -35,3 +35,12 @@ class UserViewSet(viewsets.ModelViewSet):
         user.is_verified = False
         user.save()
         return Response({'status': 'user unverified'}, status=status.HTTP_200_OK)
+
+
+class RegisterView(UserViewSet):
+    
+    def get(self, request, *args, **kwargs):
+        pass
+
+    def post(self, request, *args, **kwargs):
+        pass

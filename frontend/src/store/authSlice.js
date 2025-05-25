@@ -1,5 +1,5 @@
 
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import api from '../services/api';
 
 const initialState = {
@@ -28,6 +28,7 @@ const authSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(login.pending, (state) => {
+        console.log('Login pending' + state.isLoading);
         state.isLoading = true;
         state.error = null;
       })
@@ -45,15 +46,15 @@ const authSlice = createSlice({
 
 export const { setCredentials, logOut } = authSlice.actions;
 
-export const login = (credentials) => async (dispatch) => {
+// 创建 login 异步 action
+export const login = createAsyncThunk('auth/login', async (credentials, { rejectWithValue }) => {
   try {
-    const response = await api.login(credentials);
-    dispatch(setCredentials(response));
+    const response = await api.login(credentials); // 假设返回 { user, access }
     return response;
-  } catch (error) {
-    throw error.response?.data || error.message;
+  } catch (err) {
+    return rejectWithValue(err.response?.data || err.message);
   }
-};
+});
 
 export const selectCurrentUser = (state) => state.auth.user;
 export const selectCurrentToken = (state) => state.auth.token;

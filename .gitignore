@@ -1,3 +1,39 @@
+# 一般文件
+*.log
+*.tmp
+*.temp
+*~
+*.bak
+*.o
+*.so
+*.pyc
+.DS_Store
+Thumbs.db
+
+# 编辑器配置
+.vscode/
+.idea/
+
+# 前端（React、Vue、Angular）
+dist/
+build/
+npm-debug.log*
+yarn-error.log
+*.js.map
+*.tsbuildinfo
+
+# 后端（Node.js、Python、Java）
+venv/
+node_modules/
+*.sqlite
+*.db
+uploads/
+media/
+
+# 环境文件
+.env
+.env.local
+
+# 项目特定文件
 pandoc-3.6.4/
 pandoc-3.6.4.7z
-backend\.env.example
